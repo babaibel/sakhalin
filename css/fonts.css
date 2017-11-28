@@ -1,0 +1,11 @@
+
+@font-face {
+  font-family: 'Gabriola';
+  src: 
+  url('../fonts/Gabriola.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Gabriola.woff') format('woff'),
+  url('../fonts/Gabriola.ttf')  format('truetype'),
+  url('../fonts/Gabriola.svg#Gabriola') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
