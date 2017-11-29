@@ -53,6 +53,37 @@ $(function() {
 	});
 });
 
+$(function() {
+
+	$('.js-gallery-bigslider').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  fade: true
+	});
+
+});
+$(function() {
+	// $('.gallery-bigslider').magnificPopup({
+	// 	delegate: '.bigslider__item',
+	// 	type: 'image',
+	// 	gallery:{
+	// 	    enabled:true
+	// 	  }
+	// 	 // other options
+	// });
+
+	$('.gallery-bigslider').each(function() { // the containers for all your galleries
+	    $(this).magnificPopup({
+	        delegate: 'a', // the selector for gallery item
+	        type: 'image',
+	        gallery: {
+	          enabled:true
+	        }
+	    });
+	});
+});
+
 // $(function() {
 
 // 	$('.js-popup-modal').magnificPopup({

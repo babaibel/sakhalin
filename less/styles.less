@@ -210,8 +210,6 @@ img{
 
 .h1-title{
 	display: block;
-	width: 386px;
-	height: 98px;
 	background-repeat: no-repeat;
 	background-position: center top;
 	text-indent: -9999px;
@@ -632,27 +630,538 @@ img{
 	}
 }
 
-.footer{
+.video{
+	iframe{
+		display: block;
+		margin: 0 auto 35px;
+		border-radius: 10px;
+	}
+	&-wr{
+		background: url(../img/view-bg.jpg) no-repeat center top;
+		background-size: cover;
+		padding: 55px 0;
+	}
+	&-title{
+		text-align: center;
+		font: 700 45px/47px @font;
+		color: #203546;
+		text-transform: uppercase;
+		margin: 0 0 55px;
+		padding: 0;
+		i{
+			font-style: normal;
+			font: 400 55px/57px @fontg;
+			color: #818890;
+			display: block;
+			text-transform: none;
+		}
+		span{
+			font-size: 60px;
+		}
+	}
+
+}
+
+.youtube-btn{
+	display: inline-block;
+	font: 700 20px/22px @font;
+	color: #38434b;
+	padding: 15px 50px 15px 65px;
+	border: 2px solid #38434b;
+	border-radius: 5px;
+	background: url(../img/icons/youtube-ico.png) no-repeat 23px center transparent;
+	.trn;
+	&:hover{
+		background-color: #fff;
+	}
+}
+
+.center{
+	text-align: center;
+}
+
+.team{
 	display: flex;
-	align-items: left;
-	padding: 50px 0;
+	justify-content: space-around;
+
+	&__item{
+		text-align: center;
+		&-image{
+			display: block;
+			margin: 0 auto 30px;
+		}
+		&-name{
+			color: #000;
+			font: 400 22px/24px @font;
+			margin: 0 0 5px;
+		}
+		&-post{
+			color: #000;
+			font: 700 18px/20px @font;
+		}
+		&-soc{
+			text-align: center;
+			margin-top: 20px;
+			.soc-link{
+				display: inline-block;
+				margin: 0 5px;
+				.trn;
+				&--fb{
+					width: 9px;
+					height: 19px;
+					background: url(../img/icons/fb-ico.png) no-repeat left top;
+				}
+				&--tw{
+					width: 18px;
+					height: 15px;
+					background: url(../img/icons/tw-ico.png) no-repeat left top;
+				}
+				&--vk{
+					width: 22px;
+					height: 14px;
+					background: url(../img/icons/vk-ico.png) no-repeat left top;
+				}
+				&:hover{
+					opacity: .8;
+				}
+			}
+		}
+	}
+	&-wr{
+		padding: 55px 0;
+	}
+	&-title{
+		text-align: center;
+		font: 700 45px/47px @font;
+		color: #203546;
+		text-transform: uppercase;
+		margin: 0 0 65px;
+		padding: 0;
+		i{
+			font-style: normal;
+			font: 400 55px/55px @fontg;
+			color: #818890;
+			display: block;
+			text-transform: none;
+		}
+	}
+}
+
+.blog{
+	display: flex;
+	margin: 0 -25px;
+	&-wr{
+		padding: 55px 0 35px;
+	}
+	&-title{
+		text-align: center;
+		font: 700 45px/47px @font;
+		color: #203546;
+		text-transform: uppercase;
+		margin: 0 0 50px;
+		padding: 0;
+		i{
+			font-style: normal;
+			font: 400 30px/32px @fontg;
+			color: #818890;
+			display: block;
+			text-transform: none;
+		}
+	}
+	&__item{
+		&-wr{
+			padding: 0 25px;
+		}
+		display: block;
+		border-radius: 5px;
+		.trn;
+		&:hover{
+			box-shadow: 0 0 25px rgba(64, 64, 64, 0.4);
+		}
+		&-content{
+			color: #203546;
+			padding: 25px 30px;
+			.text{
+				font: 400 16px/20px @font;
+			}
+			.date{
+				font: 400 16px/20px @font;
+				margin: 0 0 10px;
+			}
+			.title{
+				font: 700 22px/24px @font;
+				margin: 0 0 15px;
+			}
+		}
+		&-image{
+			height: 280px;
+			background-size: cover;
+			background-position: center top;
+			background-repeat: no-repeat;
+			border-radius: 5px 5px 0 0;
+		}
+	}
+
+}
+
+.footer{
+	background: url(../img/footer-bg.jpg) no-repeat center top;
+	background-size: cover;
+	form{
+		width: 100%;
+		display: block;
+	}
+	&-title{
+		text-align: center;
+		font: 700 45px/47px @font;
+		color: #203546;
+		text-transform: uppercase;
+		margin: 0 0 50px;
+		padding: 0;
+		i{
+			font-style: normal;
+			font: 400 40px/42px @fontg;
+			color: #818890;
+			display: block;
+			text-transform: none;
+		}
+	}
+	&__application{
+		padding: 30px 0;
+		border-radius: 5px;
+		border: 2px solid #cacfd3;
+		&-wr{
+			background: rgba(255, 255, 255, 0.9);
+			padding: 5px;
+			margin: 0 0 265px;
+			border-radius: 5px;
+		}
+	}
+	&__form{
+		display: flex;
+		align-items: left;
+
+		&-col{
+			flex-grow: 1;
+			padding: 0 40px;
+			width: 50%;
+		}
+		&-row{
+			display: flex;
+			align-items: left;
+			margin-bottom: 20px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			.text-field-label{
+				flex-shrink: 0;
+				font: 400 18px/54px @font;
+				color: #000;
+				width: 120px;
+			}
+			
+			.text-field{
+				flex-grow: 1;
+				input[type="text"]{
+					display: block;
+					width: 100%;
+					border: 0;
+					font: 700 18px/54px @font;
+					padding-bottom: 4px;
+					background: url(../img/input-bg.png) repeat-x bottom left transparent;
+				}
+			}
+			&--onecol{
+				display: block;
+			}
+		}
+		.text-top-label{
+			font: 400 18px/54px @font;
+			color: #000;
+		}
+		textarea{
+			height: 164px;
+			width: 100%;
+			display: block;
+			background-size: cover;
+			resize: none;
+			padding: 14px;
+			border: 2px solid #cacfd3;
+			border-radius: 3px;
+			font: 400 16px/18px @font;
+			background: transparent;
+		}
+		&-btn{
+			display: inline-block;
+			font: 700 20px/20px @font;
+			color: #38434b;
+			padding: 15px 30px;
+			border: 2px solid #38434b;
+			border-radius: 5px;
+			background: transparent;
+			.trn;
+			&:hover{
+				opacity: .8;
+			}
+		}
+	}
+	
+	&__bottom{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 180px;
+		&-wr{
+			background: rgba(0, 0, 0, 0.2);
+		}
+		.footer-logo{
+			flex-shrink: 0;
+			img{
+				display: block;
+				width: 104px;
+			}
+		}
+		.footer-menu{
+			flex-shrink: 0;
+			&__item{
+				display: block;
+				margin: 0 0 20px;
+				&:last-child{
+					margin: 0;
+				}
+				a{
+					text-decoration: underline;
+					color: #fff;
+					font: 400 14px/16px @font;
+					white-space: nowrap;
+					&:hover{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		&__right{
+			text-align: right;
+			flex-shrink: 0;
+			width: 320px;
+		}
+		.footer-phone{
+			text-align: center;
+			width: 205px;
+			&-btn{
+				display: block;
+				background: url(../img/footer-phone-btn-bg.png) no-repeat left top;
+				width: 198px;
+				height: 51px;
+				.trn;
+				&:hover{
+					opacity: .8;
+				}
+			}
+			&-link{
+				color: #fff;
+				font: 400 28px/30px @font;
+				margin: 0 0 10px;
+				display: inline-block;
+				strong{
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+}
+
+.subscribe-form{
+	&__title{
+		color: #fff;
+		font: 700 22px/24px @font;
+		margin: 0 0 15px;
+	}
+	&__panel{
+		background: #fff;
+		border-radius: 5px;
+		padding: 5px 5px 5px 15px;
+		&-field{
+			position: relative;
+			top: 2px;
+			display: inline-block;
+			vertical-align: middle;
+		    width: 200px;
+		    border: 0;
+		    font: 400 18px/26px 'PT Sans', sans-serif;
+		    padding-bottom: 4px;
+		    color: #010101;
+		    background: url(../img/input-bg.png) repeat-x bottom left transparent;
+		    margin: 0 15px;
+		}
+		&-label{
+			display: inline-block;
+			vertical-align: middle;
+			color: #010101;
+			font: 400 18px/26px 'PT Sans', sans-serif;
+		}
+		&-btn{
+			display: inline-block;
+			vertical-align: middle;
+			width: 44px;
+			height: 45px;
+			border: 0;
+			background: url(../img/subscribe-btn.png) no-repeat left top;
+			.trn;
+			&:hover{
+				opacity: .8;
+			}
+		}
+	}
+}
+
+.acquaintance{
+	background: url(../img/acquaintance-bg.jpg) no-repeat center top;
+	background-size: cover;
+	padding: 90px 0 55px;
+
+	&-title{
+		text-align: center;
+		font: 700 45px/47px @font;
+		color: #203546;
+		text-transform: uppercase;
+		margin: 0 0 50px;
+		padding: 0;
+		i{
+			display: inline-block;
+			position: absolute;
+			top: -49px;
+			right: 0;
+			font-style: normal;
+			font: 400 55px/57px @fontg;
+			color: #818890;
+			display: block;
+			text-transform: none;
+		}
+		span{
+			position: relative;
+			font-size: 22px;
+		}
+	}
+	&-nav{
+		&-wr{
+			background: #fff;
+			border-radius: 5px;
+		}
+		display: flex;
+
+		margin: 0 0 20px;
+		&__item{
+			display: block;
+    		flex-grow: 1;
+    		&:first-child{
+    			a{
+    				border-radius: 5px 0 0 5px;
+    			}
+    		}
+    		&:last-child{
+    			a{
+    				border-radius: 0 5px 5px 0;
+    			}
+    		}
+			a{
+				display: block;
+				color: #010101;
+				font: 400 18px/60px @font;
+				text-align: center;
+				.trn;
+			}
+			&:hover,
+			&.active{
+				a{
+					background: #203546;
+					color: #fff;
+					font-weight: 700;
+				}
+			}
+		}
+
+	}
+}
+
+.gallery{
+	&-wr{
+		background: #fff;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+	display: flex;
 
 	&__left{
-		padding-right: 60px;
-		flex-shrink: 0;
-	}
-	&__mid{
 		flex-grow: 1;
+		padding: 30px 50px;
+		width: 60%;
 	}
 	&__right{
-		padding-left: 60px;
-		text-align: right;
 		flex-shrink: 0;
+		width: 40%;
 	}
-	p{
-		margin: 0;
-		color: #bfbebe;
-		font: 16px/18px @font;
+
+	&-title{
+		font: 400 36px/38px @font;
+		color: #203546;
+		padding: 0;
+		margin: 0 0 15px;
+	}
+	&-btn{
+		display: inline-block;
+		font: 700 20px/20px @font;
+		color: #38434b;
+		padding: 15px 0;
+		width: 260px;
+		text-align: center;
+		border: 2px solid #38434b;
+		border-radius: 5px;
+		background: transparent;
+		.trn;
+		&:hover{
+			opacity: .8;
+		}
+	}
+
+}
+
+.smallslider{
+	margin: 0 -15px 15px;
+	&__item{
+		float: left;
+		padding: 0 15px;
+		margin: 10px 0;
+		img{
+			display: block;
+		}
+	}
+}
+
+.bigslider{
+	&__item{
+		position: relative;
+		&:after{
+			content: "";
+			background: url(../img/increase.png) no-repeat left top;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: block;
+			width: 63px;
+			height: 63px;
+			opacity: .9;
+			.trn;
+		}
+		&:hover{
+			&:after{
+				opacity: 1;
+			}
+		}
 	}
 }
 
@@ -662,12 +1171,37 @@ img{
 	}
 	.h1-title{
 		background-image: url(../img/summer-h1-text.png);
+		width: 386px;
+    	height: 98px;
 	}
 	.callback-btn{
 		background-image: url(../img/summer-bhone-btn-bg.png);
 	}
 	.season-lable{
 		background: url(../img/summer-lable.png) no-repeat left top;
+	}
+}
+
+.winter-body{
+	.main-banner{
+		background-image: url(../img/winter-main-bg.jpg);
+	}
+	.h1-title{
+		background-image: url(../img/winter-h1-text.png);
+		width: 479px;
+		height: 152px;
+		top: 60px;
+	}
+	.callback-btn{
+		background-image: url(../img/winter-bhone-btn-bg.png);
+	}
+	.season-lable{
+		background: url(../img/winter-lable.png) no-repeat left top;
+	}
+	.main-banner__phone-block{
+		background: url(../img/main-banner__phone-block-bg.png) no-repeat center center;
+		background-size: contain;
+		
 	}
 }
 
