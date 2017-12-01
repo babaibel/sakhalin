@@ -70,6 +70,7 @@ $(function() {
 		infinite: true,
 		speed: 300,
 		slidesToShow: 1,
+		adaptiveHeight: true,
 		appendDots: $tourSilderNav,
 		fade: true
 	});
@@ -93,5 +94,42 @@ $(function() {
 $(function() {
 	$('.js-tours-more-btn').click(function(){
 		$(this).toggleClass('active');
+	});
+});
+
+$(function() {
+	var $tourInnerSilderWr = $('.js-tours-inner-slider-wr');
+	if(!$tourInnerSilderWr.length) return;
+
+	var $tourInnerSilder = $tourInnerSilderWr.find('.js-tours-inner-slider'),
+		$tourInnerSilderList = $tourInnerSilderWr.find('.js-tours-inner-slider-list'),
+		$tourInnerSilderListItems = $tourInnerSilderList.find('.js-tours-slider-list-item');
+
+	$tourInnerSilder.on('init', function(slick){
+	  $tourInnerSilderListItems.eq(0).addClass('active');
+	});
+
+	$tourInnerSilder.slick({
+		dots: false,
+		arrows: false,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		fade: true
+	});
+
+	$tourInnerSilder.on('beforeChange', function(event, slick, currentSlide,nextSlide){
+	  $tourInnerSilderListItems.removeClass('active');
+	  $tourInnerSilderListItems.eq(nextSlide).addClass('active');
+	});
+
+	$tourInnerSilderListItems.on('click', function(){
+		var $this = $(this),
+			number = $this.index();
+
+		$tourInnerSilderListItems.removeClass('active');
+		$this.addClass('active');
+
+		$tourInnerSilder.slick('slickGoTo', number)
 	});
 });

@@ -163,6 +163,7 @@ img{
 	background-color: #fff;
 	background-repeat: no-repeat;
 	background-position: center bottom;
+	background-size: cover;
 
 	&__phone-block{
 		position: absolute;
@@ -300,11 +301,16 @@ img{
 		text-shadow: 0 0 4px rgba(64, 64, 64, 0.77);
 	}
 	&-lable{
+		display: block;
 		position: absolute;
 		top: -32px;
 		left: 25px;
 		width: 231px;
 		height: 236px;
+		.trn;
+		&:hover{
+			opacity: .9;
+		}
 	}
 }
 
@@ -845,7 +851,7 @@ img{
 		&-wr{
 			background: rgba(255, 255, 255, 0.9);
 			padding: 5px;
-			margin: 0 0 265px;
+			margin: 50px 0 265px;
 			border-radius: 5px;
 		}
 	}
@@ -1310,13 +1316,7 @@ img{
 			font-size: 75px;
 		}
 	}
-	&__content{
-		background: url(../img/tours-bg.jpg) no-repeat center top;
-		background-size: cover;
-		padding: 170px 0 80px;
-	}
-	&-slider{
-		margin: 0 120px;
+	&-slider{		
 		&.slick-dotted.slick-slider
 		{
 		    margin-bottom: 0;
@@ -1325,6 +1325,13 @@ img{
 			position: relative;
 		}
 		&__item{
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: cover;
+			padding: 170px 0 80px;
+			.wrap{
+				padding: 0 120px;
+			}
 			&-title{
 				text-align: center;
 				font: 700 40px/42px @font;
@@ -1359,9 +1366,9 @@ img{
 			width: 45px;
 			height: 415px;
 			left: 15px;
-			top: 50%;
-			transform: translateY(-50%);
+			top: 175px;
 			padding: 50px 0;
+			z-index: 2;
 
 			&-btn{
 				position: absolute;
@@ -1459,17 +1466,15 @@ img{
 			&:last-child{
 				margin: 0;
 			}
-			&--man{
-				padding-left: 35px;
-				background: url(../img/icons/man-ico.png) no-repeat left center;
+			img{
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 10px;
 			}
-			&--time{
-				padding-left: 45px;
-				background: url(../img/icons/time-ico.png) no-repeat left center;
-			}
-			&--weather{
-				padding-left: 60px;
-				background: url(../img/icons/weather-ico.png) no-repeat left center;
+			span{
+				font: 700 16px/36px @font;
+				color: #010101;
+				display: inline-block;
 			}
 		}
 		&__price{
@@ -1575,12 +1580,19 @@ img{
 				position: relative;
 				z-index: 33;
 				cursor: pointer;
-				width: 25px;
-				height: 25px;
+				width: 55px;
+				height: 55px;
 				margin-right: 20px;
-				background: url(../img/dots3.png) no-repeat center top;
+				background: url(../img/dots3.png) no-repeat center 14px #fff;
+				border-radius: 5px;
+				font: 700 16px/18px @font;
+				color: #3f3f3f;
+				text-align: center;
+				padding: 25px 5px 5px;
 				&.active{
-					background-position: center bottom;
+					text-indent: -9999px;
+					height: 35px;
+   					margin-bottom: 20px;
 					& + .tours-more-menu{
 						opacity: 1;
 						visibility: visible;
@@ -1628,6 +1640,298 @@ img{
 	}
 }
 
+.inner-switch{
+	&-wr{
+		background-color: #152643;
+	}
+	height: 125px;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	&__left{
+		flex-grow: 1;
+	}
+	&__right{
+		flex-shrink: 0;
+		text-align: right;
+	}
+	&__title{
+		font: 700 30px/32px @font;
+		text-transform: uppercase;
+	}
+	&__text{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&__btn{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.inner-season{
+		width: 38px;
+		height: 38px;
+		display: inline-block;
+		vertical-align: middle;
+		background: url(../img/inner-seasons.png) no-repeat left top;
+		margin: 0 15px;
+		&--winter{
+			background-position: left bottom;
+		}
+		&-btn{
+			width: 78px;
+			height: 46px;
+			display: inline-block;
+			vertical-align: middle;
+			background: url(../img/inner-season-btn.png) no-repeat left top;
+		}
+	}
+}
+
+.tours-inner-slider{
+	&__image{
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 430px;
+	}
+	&__title{
+		font: 700 45px/47px @font;
+		text-transform: uppercase;
+		text-align: center;
+		color: #fff;
+		padding: 105px 0 0;
+		margin: 0;
+	}
+	&__bottomline{
+		background-color: #152643;
+	}
+	&__desc{
+		display: flex;
+		align-items: center;
+		height: 225px;
+		justify-content: space-around;
+		&-item{
+			font: 400 20px/22px @font;
+			color: #fff;
+			img,
+			span{
+				display: inline-block;
+				vertical-align: middle;
+			}
+			img{
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+.catalog{
+	&-wr{
+		background: #d8e3f1;
+		padding: 90px 0;
+		position: relative;
+	}
+	margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+    &__item{
+    	position: relative;
+    	display: flex;
+    	flex-flow: column;
+    	height: 100%;
+    	&-wr{
+    		padding: 0 15px;
+    		margin: 0 0 30px;
+    		width: 50%;
+    	}
+    	&-image{
+    		display: block;
+    		height: 355px;
+    		background-position: center center;
+    		background-size: cover;
+    		background-repeat: no-repeat;
+    	}
+    	&-footer{
+    		display: flex;
+    		align-items: center;
+  			justify-content: space-between;
+  			height: 95px;
+  			background-color: #f6f6f6;
+  			padding: 0 30px;
+			&__item{
+				flex-shrink: 0;
+				img{
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+				span{
+					font: 700 16px/36px @font;
+					color: #010101;
+					display: inline-block;
+				}
+			}
+    	}
+    	&-desc{
+    		padding: 30px;
+    		background-color: #fff;
+    		flex-grow: 1;
+    	}
+    	&-title{
+    		font: 700 28px/30px @font;
+    		color: #152643;
+    		margin: 0 0 30px;
+    	}
+    	&-text{
+    		font: 400 16px/20px @font;
+    		color: #322d27;
+    	}
+    	&-topline{
+    		display: flex;
+    		margin: 0 0 25px -30px;
+    		align-items: center;
+			.price{
+				flex-grow: 1;
+	    		text-align: right;
+	    		font: 700 20px/48px @font;
+	    		color: #010101;
+	    		span{
+	    			font-size: 30px;
+	    		}
+	    	}
+	    	.label{
+	    		flex-shrink: 0;
+	    		font: 700 16px/48px @font;
+	    		color: #fff;
+	    		padding: 0 30px;
+	    		text-transform: uppercase;
+	    		&--red{
+	    			background-color: #982d2d;
+	    		}
+	    		&--yellow{
+	    			background-color: #d7a716;
+	    		}
+	    		&--green{
+	    			background-color: #3f8c1d;
+	    		}
+	    	}
+    	}
+		&-overlay{
+			background-color: rgba(127, 145, 176, 0.7);
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: auto;
+			height: auto;
+			z-index: 5;
+			.trn;
+			visibility: hidden;
+			opacity: 0;
+			.overlay-btn{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: #2f7ce3;
+				border-radius: 30px;
+				width: 80%;
+				font: 700 18px/20px @font;
+				text-transform: uppercase;
+				text-align: center;
+				padding: 27px 25px 25px;
+				color: #fff;
+				box-shadow: 0 1px 15px rgba(0, 0, 0, 0.45);
+			}
+		}
+		&:hover{
+			.catalog__item-overlay{
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+    }
+}
+
+.botbtn{
+	height: 35px;
+	width: 80px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	background: url(../img/small-arr.png) no-repeat left top;
+}
+
+.inner-nav{
+	display: flex;
+	align-items: center;
+	height: 124px;
+	&__left{
+		flex-grow: 1;
+	}
+	.inner-menu{
+		display: flex;
+		align-items: left;
+		justify-content: space-between;
+		padding-right: 150px;
+		&__item{
+			flex-shrink: 0;
+			color: #010101;
+			font: 700 16px/18px @font;
+			text-transform: uppercase;
+			position: relative;
+			&:after{
+				content:'';
+				display: block;
+				height: 4px;
+				width: 20px;
+				background-color: #c5dbf7;
+				position: absolute;
+				bottom: -7px;
+				left: 0;
+				.trn;
+			}
+			&:hover{
+				&:after{
+					width: 100%;
+				}
+			}
+		}
+	}
+	&__btn{
+		display: block;
+		border: 2px solid #152643;
+		border-radius: 35px;
+		color: #152643;
+		font: 700 16px/16px @font;
+		text-transform: uppercase;
+		padding: 26px 35px 26px 65px;
+		.trn;
+		background: url(../img/inner-nav-btn-bg.png) no-repeat 22px center;
+		&:hover{
+			opacity: 0.9;
+		}
+	}
+}
+
+.inner-screen{
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	&__title{
+		font: 700 30px/32px @font;
+		margin: 0 0 30px;
+		img{
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
 .summer{
 	.main-banner{
 		background-image: url(../img/summer-main-bg.jpg);
@@ -1670,6 +1974,9 @@ img{
 		
 	}
 	.season-switch__btn{
+		background-position: left bottom;
+	}
+	.inner-season-btn{
 		background-position: left bottom;
 	}
 }
