@@ -133,3 +133,51 @@ $(function() {
 		$tourInnerSilder.slick('slickGoTo', number)
 	});
 });
+
+$(function() {
+
+	var $fullscreenSilderWr = $('.js-fullscreen-slider-wr');
+	if(!$fullscreenSilderWr.length) return;
+
+	var $fullscreenSilder = $fullscreenSilderWr.find('.js-fullscreen-slider'),
+		$fullscreenSilderNav = $fullscreenSilderWr.find('.js-fullscreen-slider-controls');
+
+
+	$fullscreenSilder.slick({
+		dots: false,
+		arrows: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		fade: true,
+		appendArrows: $fullscreenSilderNav
+	});
+
+	$fullscreenSilder.each(function() {
+	    $(this).magnificPopup({
+	        delegate: '.fullscreen-slider__item',
+	        type: 'image',
+	        gallery: {
+	          enabled:true
+	        }
+	    });
+	});
+
+});
+
+$(function() {
+
+	$(".js-inner-menu a").on("click", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		// //забираем идентификатор бока с атрибута href
+		// var id  = $(this).attr('href'),
+		// 	top = $(id).offset().top;
+		var id = $(this).attr('href').split('#')[1], 
+			top = $('#' + id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
+});
