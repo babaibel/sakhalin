@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Верстка/Стартовая-Лето</title>
 	<link rel="stylesheet" href="css/normalize.css">
@@ -18,8 +18,9 @@
 <body class="summer">
 	<header class="header-wr">
 		<div class="wrap">
+
 			<div class="header">
-				
+				<div class="mob-btn js-mob-btn"></div>
 				<div class="header__left">
 					<ul class="main-nav">
 						<li class="main-nav__item"><a href="#">О нас</a></li>
@@ -368,7 +369,8 @@
 			 				эльдорадо
 			 			</div>
 			 		</div>
-			 		<div class="tours-list__item js-tours-slider-list-item">
+			 		<div class="tours-list__item js-tours-slider-list-ite
+			 		m">
 			 			<div class="backing"></div>	
 			 			<div class="tours-list__item-image">
 			 				<img class="def-img" src="img/safari.png" alt="">
@@ -388,7 +390,7 @@
 			 				подледный<br>лов
 			 			</div>
 			 		</div>
-			 		<div class="tours-list__item js-tours-slider-list-item">
+			 		<div class="tours-list__item js-tours-slider-list-item sm-hidden">
 			 			<div class="backing"></div>	
 			 			<div class="tours-list__item-image">
 			 				<img class="def-img" src="img/corporate.png" alt="">
@@ -398,7 +400,7 @@
 			 				корпоративные
 			 			</div>
 			 		</div>
-			 		<div class="tours-list__item js-tours-slider-list-item">
+			 		<div class="tours-list__item js-tours-slider-list-item sm-hidden">
 			 			<div class="backing"></div>	
 			 			<div class="tours-list__item-image">
 			 				<img class="def-img" src="img/privacy.png" alt="">
@@ -411,6 +413,8 @@
 			 		<div class="tours-list__more">
 			 			<div class="tours-more-btn js-tours-more-btn">ещё</div>
 			 			<ul class="tours-more-menu js-tours-more-menu">
+			 				<li class="sm-visible"><a href="#">Корпоративные</a></li>
+			 				<li><a href="#">Индивидуальные туры</a></li>
 			 				<li><a href="#">Дикая охота</a></li>
 			 				<li><a href="#">Семейный отдых</a></li>
 			 				<li><a href="#">Ралли по острову</a></li>
@@ -689,7 +693,7 @@
 						</li>
 						<li class="included-list__item included-list__item--alko">
 							<span class="included-list__item-image">
-								<img src="img/icons/guitar-ico.png" alt="">
+								<img src="img/icons/alko-ico.png" alt="">
 							</span>
 							<span class="included-list__item-text">Алкоголь<i>сколько душа пожелает</i></span>
 						</li>

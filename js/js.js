@@ -9,7 +9,25 @@ $(function() {
 		infinite: true,
 		speed: 1000,
 		slidesToShow: 5,
-		slidesToScroll: 5
+		slidesToScroll: 5,
+		responsive: [
+	    {
+	      breakpoint: 1024,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 3,
+	        infinite: true
+	      }
+	    },
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2,
+	        infinite: true
+	      }
+	    }
+	  ]
 	});
 
 	$fishSlider.mousewheel(function(e) {
@@ -36,7 +54,15 @@ $(function() {
 		infinite: true,
 		speed: 300,
 		slidesToShow: 1,
-		asNavFor: $causesBgSlider
+		asNavFor: $causesBgSlider,
+		responsive: [
+		    {
+				breakpoint: 1024,
+				settings: {
+					arrows: false
+				}
+	    	}
+	    ]
 	});
 
 	$causesBgSlider.slick({
@@ -202,6 +228,12 @@ $(function() {
 
 $(function() {
 
+	var fixed_offset = $('.header-wr').height();
+
+	$(window).resize(function(){
+		fixed_offset = $('.header-wr').height();
+	});
+
 	$(".js-inner-menu a, .js-botbtn").on("click", function (event) {
 		//отменяем стандартную обработку нажатия по ссылке
 		event.preventDefault();
@@ -213,6 +245,34 @@ $(function() {
 			top = $('#' + id).offset().top;
 		
 		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1000);
+		$('body,html').animate({scrollTop: top - fixed_offset}, 1000);
 	});
+
 });
+
+$(function() {
+
+	$('.js-mob-btn').on('click', function(){
+		$('.header').find('.main-nav').toggleClass('active');
+	});
+
+});
+
+// $(function(){
+// 	createSticky($(".inner-nav-wr"));
+// });
+
+// function createSticky(sticky) {
+	
+// 	if (typeof sticky !== "undefined") {
+
+// 		var	pos = sticky.offset().top,
+// 			win = $(window);
+			
+// 		win.on("scroll", function() {
+//     		win.scrollTop() >= pos ? sticky.addClass("fixed") : sticky.removeClass("fixed");      
+// 		});			
+// 	}
+// }
+
+
