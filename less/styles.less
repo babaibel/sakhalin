@@ -108,6 +108,7 @@ img{
 		height: 32px;
 		width: 32px;
 		background: url(../img/header-menu-btn.png) no-repeat left top;
+		flex-shrink: 0;
 	}
 }
 
@@ -141,7 +142,9 @@ img{
 
 .lang-menu{
 	display: block;
-
+	&--mob{
+		display: none;
+	}
 	&__item{
 		display: inline-block;
 		vertical-align: middle;
@@ -171,6 +174,59 @@ img{
 	}
 }
 
+.phone-block{
+	color: #fff;
+	text-align: right;
+
+	.phone-text{
+		font: 400 14px/16px @font;
+		margin: 0 0 8px;
+	}
+	.phone-num{
+		display: inline-block;
+		font: 700 24px/26px @font;
+		color: #fff;
+		margin: 0 0 13px;
+	}
+	.callback-btn{
+		display: block;
+		width: 210px;
+		height: 44px;
+		background-repeat: no-repeat;
+		background-position: left top;
+		.trn;
+		&:hover{
+			opacity: .9;
+		}
+	}
+
+	&--mob{
+		display: none;
+		position: relative;
+		padding-right: 50px;
+		top: 0!important;
+		.callback-btn{
+			width: 38px;
+			height: 38px;
+			background-position: -16px -1px;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+		.phone-num {
+			font: 700 20px/22px @font;
+			margin: 0;
+		}
+		.phone-text {
+			font: 400 15px/17px @font;
+			margin: 0 0 4px;
+		}
+	}
+}
+
 .main-banner{
 	position: relative;
 	height: 595px;
@@ -180,35 +236,10 @@ img{
 	background-size: cover;
 	margin-top: 90px;
 
-	&__phone-block{
+	.phone-block{
 		position: absolute;
 		top: 118px;
 		right: 20px;
-		color: #fff;
-		text-align: right;
-
-		.phone-text{
-			font: 400 14px/16px @font;
-			margin: 0 0 8px;
-		}
-		.phone-num{
-			display: inline-block;
-			font: 700 24px/26px @font;
-			color: #fff;
-			margin: 0 0 13px;
-		}
-		.callback-btn{
-			display: block;
-			width: 210px;
-			height: 44px;
-			background-repeat: no-repeat;
-			background-position: left top;
-			.trn;
-			&:hover{
-				opacity: .9;
-			}
-		}
-
 	}
 }
 
@@ -2319,10 +2350,9 @@ img{
 	.season-lable{
 		background: url(../img/winter-lable.png) no-repeat left top;
 	}
-	.main-banner__phone-block{
-		background: url(../img/main-banner__phone-block-bg.png) no-repeat center center;
+	.phone-block{
+		background: url(../img/phone-block-bg.png) no-repeat center center;
 		background-size: contain;
-		
 	}
 	.season-switch__btn{
 		background-position: left bottom;
@@ -2457,7 +2487,7 @@ img{
 	.logo img{
 		width: 160px;
 	}
-	.main-banner__phone-block{
+	.main-banner .phone-block{
 		top: 10px;
 		text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 	}
@@ -2613,6 +2643,53 @@ img{
 			height: 440px;
 		}
 	}
+	.tours-inner-slider__desc{
+		&-item{
+			width: 33.3333%;
+			font: 400 16px/18px @font;
+		}
+	}
+	.catalog__item{
+		&-image{
+			height: 255px;
+		}
+		&-desc{
+			padding: 20px 15px;
+		}
+		&-topline{
+			margin: 0 0 20px -15px;
+		}
+		.label {
+			font: 700 16px/42px @font;
+			padding: 0px 20px;
+		}
+		.price {
+			font: 700 18px/42px @font;
+			span{
+				font-size: 26px;
+			}
+		}
+		&-title{
+			font: 700 24px/26px @font;
+			margin: 0 0 20px;
+		}
+		&-text {
+			font: 400 14px/18px 'PT Sans', sans-serif;
+		}
+		&-footer {
+			justify-content: space-around;
+			height: auto;
+			flex-wrap: wrap;
+			background-color: #f6f6f6;
+			padding: 10px 20px;
+			img{
+				margin-right: 5px;
+			}
+			span{
+				font: 700 15px/17px @font;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 767px){
@@ -2622,6 +2699,9 @@ img{
 	.welcome{
 		.big-bear {
 			display: none;
+		}
+		&__topline{
+			padding: 30px 0;
 		}
 		&-title{
 			font: 700 28px/32px @font;
@@ -2633,7 +2713,7 @@ img{
 			}
 		}
 		&__included{
-			padding: 55px 0;
+			padding: 30px 0;
 			.included-list{
 				display: block;
 				&__item{
@@ -2652,22 +2732,70 @@ img{
 			}
 		}
 	}
-	.tours__topline,
-	.acquaintance-nav,
-	.footer__bottom-wr{
-		display: none;
+	.logo img{
+		width: 110px;
+	}
+	.summer .h1-title{
+		width: 280px;
+		height: 72px;
+		background-size: contain;
 	}
 	.header{
 		height: 70px;
+		justify-content: space-between;
 		&-wr{
 			height: 70px;
 		}
 		.mob-btn{
 			display: block;
 		}
+		&__left{
+			display: block;
+			position: absolute;
+			top: 70px;
+			left: 0;
+			width: 100%;
+			z-index: 10;
+			background: #4b689d;
+			padding: 10px 0;
+			opacity: 0;
+			visibility: hidden;
+			box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+			&.active{
+				opacity: 1;
+				visibility: visible;
+			}
+			.main-nav{
+				display: block;
+				margin-bottom: 10px;
+				border-bottom: 1px solid #3f5c91;
+				.trn;
+				&__item{
+					display: block;
+					a{
+						padding: 0 20px;
+						border-radius: 0;
+					}
+				}
+				
+			}
+			.lang-menu--mob{
+				display: block;
+				text-align: center;
+			}
+		}
+		&__right{
+			width: auto;
+			.lang-menu{
+				display: none;
+			}
+		}
 	}
 	.main-banner{
 		margin-top: 70px;
+		.phone-block{
+			display: none;
+		}
 	}
 	.blog{
 		display: block;
@@ -2715,9 +2843,23 @@ img{
 		&__application{
 			padding: 20px 0;
 			&-wr{
-				margin-top: 0;
+				margin: 0 0 35px
 				padding: 0;
 			}
+		}
+		&__bottom{
+			height: 120px;
+			.footer-logo{
+				img{
+					width: 70px;
+				}
+			}
+		}
+		&-phone{
+			display: none;
+		}
+		.footer-menu__item{
+			margin: 0 0 10px;
 		}
 	}
 	.team-title,
@@ -2730,50 +2872,42 @@ img{
 		margin-bottom: 35px;
 	}
 	.video iframe{
-		height: 220px;
-	}
-	.main-nav{
-		display: block;
-		position: absolute;
-		top: 70px;
-		left: 0;
-		width: 100%;
-		z-index: 10;
-		background: #4b689d;
-		padding: 10px 0;
-		opacity: 0;
-		visibility: hidden;
-		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
-		.trn;
-		&__item{
-			display: block;
-			a{
-				padding: 0 20px;
-				border-radius: 0;
+		&-title{
+			span{
+				font-size: 50px;
 			}
 		}
-		&.active{
-			opacity: 1;
-			visibility: visible;
-		}
+		height: 220px;
 	}
 	.causes{
+		padding: 30px 0 40px;
 		&-slider{
-			margin: 0;
+			margin: 0!important;
 		}
 		&-item{
 			background: rgba(255, 255, 255, 0.89);
 			border-radius: 5px;
 			height: auto;
-			padding: 20px 20px 25px;
-			&-text{
-				padding-left: 15px;
+			padding: 20px 15px;
+			&__text{
+				padding-left: 10px;
+			}
+			&__title {
+				display: block;
+				color: #010101;
+				font: 30px/32px @fontg;
+				margin: 0 0 15px;
+				padding: 0 0 4px 10px;
+				background-position: 0 bottom;
+				span{
+					font-size: 45px;
+				}
 			}
 		}
 		&-title{
-			font: 700 34px/36px @font;
+			font: 700 30px/32px @font;
 			span{
-				font: 700 40px/42px @font;
+				font: 700 36px/38px @font;
 			}
 		}
 	}
@@ -2803,10 +2937,110 @@ img{
 			}
 		}
 	}
-	.season__topline .h2-title{
-		font: 700 34px/42px @font;
-		i{
-			font: 400 28px/28px @fontg;
+	.phone-block--mob{
+		display: block;
+	}
+	.season{
+		&__topline{
+			.h2-title{
+				font: 700 30px/32px @font;
+				margin-bottom: 30px;
+				i{
+					font: 400 26px/26px @fontg;
+				}
+			}
+			.season-lable{
+				display: none;
+			}
+		}
+		&-wr{
+			margin-bottom: 0;
+		}
+		&__topline{
+			top: -30px;
+		}
+		&-switch{
+			background: #fffef0;
+			height: auto;
+			border-radius: 5px;
+			margin-bottom: 30px;
+			&__panel{
+				top: 0;
+				padding: 15px 5px;
+			}
+			&__btn{
+				margin: 0 5px;
+			}
+			&__item{
+				font: 700 15px/17px @font;
+				&:first-child{
+					padding-left: 45px;
+				}
+				&:last-child{
+					padding-left: 35px;
+				}
+			}
+		}
+	}
+	.fish-slider{
+		&-wr{
+			top: auto;
+		}
+		.fish-item{
+			&__tooltip{
+				padding: 5px;
+				font: 400 14px/16px @font;
+				b{
+					font: 700 16px/18px @font;
+				}
+			}
+			&__size{
+				font: 700 16px/18px @font;
+			}
+		}
+	}
+	.inner-switch{
+		height: auto;
+		display: block;
+		padding: 15px 0;
+		&__title{
+			font: 700 26px/28px @font;
+			text-align: center;
+		}
+		&__right{
+			text-align: center;
+		}
+	}
+	.catalog{
+		display: block;
+		margin: 0;
+		&-wr{
+			padding: 50px 0;
+		}
+		&__item{
+			&-wr{
+				padding: 0;
+				width: 100%;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+			.label {
+				font: 700 14px/42px @font;
+			}
+			.price{
+				span{
+					font-size: 18px;
+				}
+			}
+			&-overlay{
+				.overlay-btn {
+					border-radius: 30px;
+					width: 90%;
+					font: 700 15px/17px @font;
+					padding: 17px 15px 15px;
+				}
+			}
 		}
 	}
 }

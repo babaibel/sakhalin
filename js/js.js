@@ -112,12 +112,51 @@ $(function() {
 	});
 });
 
+// $(function() {
+// 	var $tourSilderWr = $('.js-tours-slider-wr');
+// 	if(!$tourSilderWr.length) return;
+
+// 	var $tourSilder = $tourSilderWr.find('.js-tours-slider'),
+// 		$tourSilderNav = $tourSilderWr.find('.js-tours-slider-controls'),
+// 		$tourSilderList = $tourSilderWr.find('.js-tours-slider-list'),
+// 		$tourSilderListItems = $tourSilderList.find('.js-tours-slider-list-item');
+
+// 	$tourSilder.on('init', function(slick){
+// 	  $tourSilderListItems.eq(0).addClass('active');
+// 	});
+
+// 	$tourSilder.slick({
+// 		dots: true,
+// 		arrows: false,
+// 		infinite: true,
+// 		speed: 300,
+// 		slidesToShow: 1,
+// 		adaptiveHeight: true,
+// 		appendDots: $tourSilderNav,
+// 		fade: true
+// 	});
+
+// 	$tourSilder.on('beforeChange', function(event, slick, currentSlide,nextSlide){
+// 	  $tourSilderListItems.removeClass('active');
+// 	  $tourSilderListItems.eq(nextSlide).addClass('active');
+// 	});
+
+// 	$tourSilderListItems.on('click', function(){
+// 		var $this = $(this),
+// 			number = $this.index();
+
+// 		$tourSilderListItems.removeClass('active');
+// 		$this.addClass('active');
+
+// 		$tourSilder.slick('slickGoTo', number)
+// 	});
+// });
+
 $(function() {
 	var $tourSilderWr = $('.js-tours-slider-wr');
 	if(!$tourSilderWr.length) return;
 
 	var $tourSilder = $tourSilderWr.find('.js-tours-slider'),
-		$tourSilderNav = $tourSilderWr.find('.js-tours-slider-controls'),
 		$tourSilderList = $tourSilderWr.find('.js-tours-slider-list'),
 		$tourSilderListItems = $tourSilderList.find('.js-tours-slider-list-item');
 
@@ -126,20 +165,20 @@ $(function() {
 	});
 
 	$tourSilder.slick({
-		dots: true,
+		dots: false,
 		arrows: false,
 		infinite: true,
 		speed: 300,
 		slidesToShow: 1,
 		adaptiveHeight: true,
-		appendDots: $tourSilderNav,
 		fade: true
 	});
 
-	$tourSilder.on('beforeChange', function(event, slick, currentSlide,nextSlide){
-	  $tourSilderListItems.removeClass('active');
-	  $tourSilderListItems.eq(nextSlide).addClass('active');
-	});
+	
+	// $tourSilder.on('beforeChange', function(event, slick, currentSlide,nextSlide){
+	//   $tourSilderListItems.removeClass('active');
+	//   $tourSilderListItems.eq(nextSlide).addClass('active');
+	// });
 
 	$tourSilderListItems.on('click', function(){
 		var $this = $(this),
@@ -149,6 +188,25 @@ $(function() {
 		$this.addClass('active');
 
 		$tourSilder.slick('slickGoTo', number)
+	});
+});
+
+$(function() {
+	var $SilderInSliderWr = $('.slider-in-slider-wr');
+	if(!$SilderInSliderWr.length) return;
+
+	var $SilderInSlider = $SilderInSliderWr.find('.slider-in-slider'),
+		$SilderInSliderNav = $SilderInSliderWr.find('.js-tours-slider-controls');
+
+	$SilderInSlider.slick({
+		dots: true,
+		arrows: false,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		adaptiveHeight: true,
+		appendDots: $SilderInSliderNav,
+		fade: true
 	});
 });
 
@@ -253,7 +311,7 @@ $(function() {
 $(function() {
 
 	$('.js-mob-btn').on('click', function(){
-		$('.header').find('.main-nav').toggleClass('active');
+		$('.header').find('.js-main-nav-mob').toggleClass('active');
 	});
 
 });
