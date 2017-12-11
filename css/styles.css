@@ -1796,6 +1796,7 @@ img {
   text-transform: uppercase;
   padding: 26px 35px 26px 65px;
   transition: all 0.3s ease;
+  white-space: nowrap;
   background: url(../img/inner-nav-btn-bg.png) no-repeat 22px center;
 }
 .inner-nav__btn:hover {
@@ -2314,8 +2315,13 @@ img {
   .included-list {
     padding-right: 0;
   }
+  .included-list__item {
+    margin: 0 0 10px;
+  }
   .included-list__item-image {
-    width: 95px;
+    width: 60px;
+    height: 70px;
+    line-height: 70px;
   }
   .included-list__item-text i {
     font: 400 14px/16px 'PT Sans', sans-serif;
@@ -2359,6 +2365,9 @@ img {
   }
   .footer-subscribe {
     display: none;
+  }
+  .footer__application {
+    margin: 35px 0 0;
   }
   .acquaintance-title {
     font: 700 40px/42px 'PT Sans', sans-serif;
@@ -2435,6 +2444,22 @@ img {
   .catalog__item-footer span {
     font: 700 15px/17px 'PT Sans', sans-serif;
   }
+  .inner-nav {
+    height: 60px;
+  }
+  .inner-nav__btn {
+    font: 700 14px/16px 'PT Sans', sans-serif;
+    text-transform: uppercase;
+    padding: 6px 15px 6px 35px;
+    background: url(../img/inner-nav-btn-bg.png) no-repeat 7px center;
+    background-size: 24px;
+  }
+  .inner-nav .inner-menu {
+    padding-right: 50px;
+  }
+  .inner-nav .inner-menu__item {
+    text-transform: none;
+  }
 }
 @media screen and (max-width: 767px) {
   .wrap {
@@ -2476,11 +2501,6 @@ img {
   }
   .logo img {
     width: 110px;
-  }
-  .summer .h1-title {
-    width: 280px;
-    height: 72px;
-    background-size: contain;
   }
   .header {
     height: 70px;
@@ -2534,17 +2554,43 @@ img {
   }
   .main-banner {
     margin-top: 70px;
+    height: 450px;
+    background-size: auto auto;
   }
   .main-banner .phone-block {
     display: none;
+  }
+  .winter > .main-banner {
+    background-position: center -26px;
+  }
+  .winter > .main-banner .h1-title {
+    width: 300px;
+    height: 110px;
+    background-size: contain;
+    top: 82px;
+  }
+  .summer > .main-banner {
+    background-position: center -45px;
+  }
+  .summer > .main-banner .h1-title {
+    width: 250px;
+    height: 65px;
+    top: 110px;
+    background-size: contain;
   }
   .blog {
     display: block;
     margin: 0;
   }
+  .blog-wr {
+    padding: 35px 0 20px;
+  }
   .blog__item-wr {
     padding: 0;
     margin-bottom: 20px;
+  }
+  .blog__item-wr:last-child {
+    margin-bottom: 0;
   }
   .blog-title {
     font: 700 32px/34px 'PT Sans', sans-serif;
@@ -2579,8 +2625,8 @@ img {
     padding: 20px 0;
   }
   .footer__application-wr {
-    margin: 0 0 35px
-				padding: 0;
+    margin: 0 0 35px;
+    padding: 0;
   }
   .footer__bottom {
     height: 120px;
@@ -2597,7 +2643,7 @@ img {
   .team-title,
   .footer-title,
   .video-title {
-    font: 700 34px/42px 'PT Sans', sans-serif;
+    font: 700 34px/38px 'PT Sans', sans-serif;
     margin-bottom: 35px;
   }
   .team-title i,
@@ -2669,12 +2715,31 @@ img {
     margin-top: 10px;
     font: 700 18px/20px 'PT Sans', sans-serif;
   }
+  .acquaintance-nav {
+    display: block;
+  }
+  .acquaintance-nav__item a {
+    font: 400 18px/42px 'PT Sans', sans-serif;
+  }
+  .acquaintance-nav__item:first-child a {
+    border-radius: 5px 5px 0 0!important;
+  }
+  .acquaintance-nav__item:last-child a {
+    border-radius: 0 0 5px 5px!important;
+  }
+  .acquaintance-nav__item.with-droplist span:after {
+    display: none;
+    padding-right: 0;
+  }
+  .acquaintance-nav__droplist {
+    display: none;
+  }
   .phone-block--mob {
     display: block;
   }
   .season__topline .h2-title {
     font: 700 30px/32px 'PT Sans', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   .season__topline .h2-title i {
     font: 400 26px/26px 'Gabriola', sans-serif;
@@ -2713,6 +2778,9 @@ img {
   .fish-slider-wr {
     top: auto;
   }
+  .fish-slider-wr:before {
+    top: 96px;
+  }
   .fish-slider .fish-item__tooltip {
     padding: 5px;
     font: 400 14px/16px 'PT Sans', sans-serif;
@@ -2722,6 +2790,14 @@ img {
   }
   .fish-slider .fish-item__size {
     font: 700 16px/18px 'PT Sans', sans-serif;
+  }
+  .fish-slider .fish-item__image {
+    height: 90px;
+    margin: 0 0 36px;
+    padding: 0 7px;
+  }
+  .fish-slider .fish-item__tooltip {
+    top: 125px;
   }
   .inner-switch {
     height: auto;
@@ -2760,5 +2836,150 @@ img {
     width: 90%;
     font: 700 15px/17px 'PT Sans', sans-serif;
     padding: 17px 15px 15px;
+  }
+  .detail {
+    flex-flow: column-reverse;
+  }
+  .detail__right {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .detail__left {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  .detail-title {
+    font: 700 28px/32px 'PT Sans', sans-serif;
+  }
+  .detail__quote {
+    padding-left: 35px;
+  }
+  .detail__quote:before {
+    width: 20px;
+  }
+  .detail .price-block {
+    width: 100%;
+    height: auto;
+    background-position: center bottom;
+    padding-bottom: 35px;
+    padding-top: 30px;
+  }
+  .detail .send-btn {
+    width: 240px;
+    height: 50px;
+    margin-bottom: 0;
+  }
+  .detail-topline {
+    width: 100%;
+    display: block;
+  }
+  .detail-topline__item {
+    margin-bottom: 10px;
+  }
+  .detail-topline__item:last-child {
+    margin-bottom: 0;
+  }
+  .inner-nav {
+    display: block;
+    height: auto;
+    padding: 20px 0 30px;
+  }
+  .inner-nav-wr {
+    height: auto;
+  }
+  .inner-nav__btn {
+    text-align: center;
+  }
+  .inner-nav .inner-menu {
+    padding-right: 0;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .inner-nav .inner-menu__item a {
+    display: block;
+    padding: 10px 0;
+  }
+  .inner-nav .inner-menu__item:after {
+    bottom: 0;
+  }
+  .timetable {
+    display: block;
+    margin: 0;
+  }
+  .timetable__col {
+    padding: 0;
+    margin: 0 0 22px;
+    width: 100%;
+  }
+  .inner-screen {
+    padding: 30px 0;
+  }
+  .inner-screen__title {
+    font: 700 18px/20px 'PT Sans', sans-serif;
+    margin: 0 0 35px;
+  }
+  .inner-screen__title img {
+    width: 50px;
+  }
+  .fullscreen-slider {
+    margin-bottom: 30px;
+  }
+  .fullscreen-slider__item {
+    height: 320px;
+  }
+  .fullscreen-slider__item:after {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+  }
+  .fullscreen-slider-controls {
+    top: 158px;
+  }
+  .fullscreen-slider-controls .slick-prev,
+  .fullscreen-slider-controls .slick-next {
+    width: 40px;
+    height: 40px;
+    background-size: 100% 200%;
+  }
+  .inner-screen .included-list {
+    display: block;
+  }
+  .inner-screen .included-list__item {
+    margin: 0 0 10px;
+    width: 100%;
+  }
+  .inner-screen .included-list__item-image {
+    margin-right: 10px;
+    width: 60px;
+    height: 70px;
+    line-height: 70px;
+  }
+  .inner-screen .included-list__item-text i {
+    font: 400 16px/18px 'PT Sans', sans-serif;
+  }
+  .share {
+    display: block;
+    height: auto;
+  }
+  .share-panel {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .share .order-btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .tours-title {
+    font: 700 32px/34px 'PT Sans', sans-serif;
+  }
+  .tours-title i {
+    font: 400 35px/37px 'Gabriola', sans-serif;
+  }
+  .tours-title span {
+    font-size: 55px;
+  }
+  .tours__topline {
+    padding-top: 30px;
   }
 }
