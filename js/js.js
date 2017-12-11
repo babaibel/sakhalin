@@ -158,7 +158,8 @@ $(function() {
 
 	var $tourSilder = $tourSilderWr.find('.js-tours-slider'),
 		$tourSilderList = $tourSilderWr.find('.js-tours-slider-list'),
-		$tourSilderListItems = $tourSilderList.find('.js-tours-slider-list-item');
+		$tourSilderListItems = $tourSilderList.find('.js-tours-slider-list-item'),
+		$SilderInSliderWr = $('.js-slider-in-slider-wr');
 
 	$tourSilder.on('init', function(slick){
 	  $tourSilderListItems.eq(0).addClass('active');
@@ -174,7 +175,48 @@ $(function() {
 		fade: true
 	});
 
-	
+	$tourSilderList.slick({
+		dots: false,
+		arrows: false,
+		infinite: false,
+		speed: 300,
+		slidesToShow: 6,
+		responsive: [
+			{
+				breakpoint: 1023,
+				settings: {
+					dots: true,
+					slidesToShow: 4,
+					slidesToScroll: 2
+				}
+			},
+				{
+				breakpoint: 767,
+				settings: {
+					dots: true,
+					slidesToShow: 3,
+					slidesToScroll: 3
+				}
+			},
+				{
+				breakpoint: 600,
+				settings: {
+					dots: true,
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},
+				{
+				breakpoint: 479,
+				settings: {
+					dots: true,
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
+
 	// $tourSilder.on('beforeChange', function(event, slick, currentSlide,nextSlide){
 	//   $tourSilderListItems.removeClass('active');
 	//   $tourSilderListItems.eq(nextSlide).addClass('active');
@@ -189,26 +231,25 @@ $(function() {
 
 		$tourSilder.slick('slickGoTo', number)
 	});
-});
 
-$(function() {
-	var $SilderInSliderWr = $('.slider-in-slider-wr');
-	if(!$SilderInSliderWr.length) return;
+	$SilderInSliderWr.each(function() {
+		var $this = $(this),
+			$SilderInSlider = $this.find('.slider-in-slider'),
+			$SilderInSliderNav = $this.find('.js-tours-slider-controls');
 
-	var $SilderInSlider = $SilderInSliderWr.find('.slider-in-slider'),
-		$SilderInSliderNav = $SilderInSliderWr.find('.js-tours-slider-controls');
-
-	$SilderInSlider.slick({
-		dots: true,
-		arrows: false,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 1,
-		adaptiveHeight: true,
-		appendDots: $SilderInSliderNav,
-		fade: true
+		$SilderInSlider.slick({
+			dots: true,
+			arrows: false,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			adaptiveHeight: true,
+			appendDots: $SilderInSliderNav,
+			fade: true
+		});
 	});
 });
+
 
 $(function() {
 	$('.js-tours-more-btn').click(function(){
