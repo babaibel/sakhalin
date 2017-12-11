@@ -20,10 +20,12 @@ $(function() {
 	      }
 	    },
 	    {
-	      breakpoint: 768,
+	      breakpoint: 767,
 	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2,
+	        slidesToShow: 1,
+	        slidesToScroll: 1,
+	        variableWidth: true,
+	        centerMode: true,
 	        infinite: true
 	      }
 	    }
@@ -278,6 +280,48 @@ $(function() {
 		fade: true
 	});
 
+	$tourInnerSilderList.slick({
+		dots: false,
+		arrows: false,
+		infinite: false,
+		speed: 300,
+		slidesToShow: 6,
+		responsive: [
+			{
+				breakpoint: 1023,
+				settings: {
+					dots: true,
+					slidesToShow: 4,
+					slidesToScroll: 2
+				}
+			},
+				{
+				breakpoint: 767,
+				settings: {
+					dots: true,
+					slidesToShow: 3,
+					slidesToScroll: 3
+				}
+			},
+				{
+				breakpoint: 600,
+				settings: {
+					dots: true,
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},
+				{
+				breakpoint: 479,
+				settings: {
+					dots: true,
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
+
 	$tourInnerSilder.on('beforeChange', function(event, slick, currentSlide,nextSlide){
 	  $tourInnerSilderListItems.removeClass('active');
 	  $tourInnerSilderListItems.eq(nextSlide).addClass('active');
@@ -357,21 +401,18 @@ $(function() {
 
 });
 
-// $(function(){
-// 	createSticky($(".inner-nav-wr"));
-// });
+$(function () { 
+	var $navWr = $('.js-inner-nav-wr'), 
+	navPosition = $navWr.offset().top; 
+	if(!$navWr.length) return; 
 
-// function createSticky(sticky) {
-	
-// 	if (typeof sticky !== "undefined") {
-
-// 		var	pos = sticky.offset().top,
-// 			win = $(window);
-			
-// 		win.on("scroll", function() {
-//     		win.scrollTop() >= pos ? sticky.addClass("fixed") : sticky.removeClass("fixed");      
-// 		});			
-// 	}
-// }
-
+	$(window).scroll(function(){ 
+		if ($(window).scrollTop() >= navPosition - 90) { 
+			$navWr.addClass('_sticky'); 
+		}
+		else {
+			$navWr.removeClass('_sticky'); 
+		}
+	}); 
+});
 
