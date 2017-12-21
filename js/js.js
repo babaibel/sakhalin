@@ -263,22 +263,12 @@ $(function() {
 	var $tourInnerSilderWr = $('.js-tours-inner-slider-wr');
 	if(!$tourInnerSilderWr.length) return;
 
-	var $tourInnerSilder = $tourInnerSilderWr.find('.js-tours-inner-slider'),
-		$tourInnerSilderList = $tourInnerSilderWr.find('.js-tours-inner-slider-list'),
+	var $tourInnerSilderList = $tourInnerSilderWr.find('.js-tours-inner-slider-list'),
 		$tourInnerSilderListItems = $tourInnerSilderList.find('.js-tours-slider-list-item');
 
-	$tourInnerSilder.on('init', function(slick){
-	  $tourInnerSilderListItems.eq(0).addClass('active');
-	});
-
-	$tourInnerSilder.slick({
-		dots: false,
-		arrows: false,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 1,
-		fade: true
-	});
+	// $tourInnerSilderList.on('init', function(slick){
+	//   $tourInnerSilderListItems.eq(0).addClass('active');
+	// });
 
 	$tourInnerSilderList.slick({
 		dots: false,
