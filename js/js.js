@@ -392,9 +392,10 @@ $(function() {
 });
 
 $(function () { 
-	var $navWr = $('.js-inner-nav-wr'), 
-	navPosition = $navWr.offset().top; 
-	if(!$navWr.length) return; 
+	var $navWr = $('.js-inner-nav-wr');
+	if(!$navWr.length) return;
+
+	var navPosition = $navWr.offset().top; 
 
 	$(window).scroll(function(){ 
 		if ($(window).scrollTop() >= navPosition - 90) { 
@@ -430,4 +431,27 @@ $(function() {
 		$(this).next('.inner-gallery__hidden-box').stop().slideToggle("slow");
 	});
 
+});
+
+$(function() {
+	$('.js-popup-youtube').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false,
+		iframe: {
+	        patterns: {
+	            youtube: {
+	                src: '//www.youtube.com/embed/%id%?autoplay=1&rel=0'
+	            }
+	        }
+	    }
+	});
+
+	$('.js-popup-youtube').click(function () {
+	    return false;
+	});
 });
