@@ -406,3 +406,28 @@ $(function () {
 	}); 
 });
 
+$(function() {
+	var $innerGallery = $('.js-inner-gallery');
+	if(!$innerGallery.length) return;
+
+	$innerGallery.each(function() {
+	    $(this).magnificPopup({
+	        delegate: '.js-inner-gallery-photo',
+	        type: 'image',
+	        gallery: {
+	          enabled:true
+	        }
+	    });
+	});
+});
+
+$(function() {
+	var $innerGalleryAcc = $('.js-inner-gallery-accordeon');
+	if(!$innerGalleryAcc.length) return;
+
+	$innerGalleryAcc.click(function() {
+		$(this).toggleClass('active');
+		$(this).next('.inner-gallery__hidden-box').stop().slideToggle("slow");
+	});
+
+});
